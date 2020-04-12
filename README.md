@@ -33,6 +33,7 @@ App to display a feedback form using Python Flask, PostgreSQL & mailtrap.io. Dep
 * [gunicorn v20.0.4](https://gunicorn.org/) Python WSGI HTTP Server for UNIX
 * [PostgreSQL](https://www.postgresql.org/) relational database
 * [mailtrap](https://mailtrap.io/) safe Email Testing for Staging & Development
+* [Heroku](https://www.heroku.com/what) cloud platform
 
 ## Setup
 
@@ -53,6 +54,7 @@ App to display a feedback form using Python Flask, PostgreSQL & mailtrap.io. Dep
 
 * SQLAlchemy Object Relational Mapper presents a method of associating user-defined Python classes with the PostgreSQL database table used, and instances of those classes (objects) with rows in this table.
 * Access credentials hidden from GitHub in `config.py` file
+* [Heroku Python runtime](https://devcenter.heroku.com/articles/python-runtimes)
 
 ## Status & To-do list
 
