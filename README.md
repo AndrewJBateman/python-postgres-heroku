@@ -1,6 +1,6 @@
-# Python-Flask PostreSQL Heroku
+# Python-Flask PostgreSQL Heroku
 
-App to display a feedback form using Python Flask, PostgreSQL & mailtrap.io. Deployed to Heroku. Tutorial code from [Traversy Media, Youtube video: Build & Deploy A Python Web App | Flask, Postgres & Heroku](https://www.youtube.com/watch?v=w25ea_I89iM)
+App to display a feedback form using Python Flask, store the entered data in a PostgreSQL database then send an example email using mailtrap.io. Deployed to Heroku. Tutorial code from [Traversy Media, Youtube video: Build & Deploy A Python Web App | Flask, Postgres & Heroku](https://www.youtube.com/watch?v=w25ea_I89iM)
 
 ## Table of contents
 
@@ -33,7 +33,7 @@ App to display a feedback form using Python Flask, PostgreSQL & mailtrap.io. Dep
 * [gunicorn v20.0.4](https://gunicorn.org/) Python WSGI HTTP Server for UNIX
 * [PostgreSQL](https://www.postgresql.org/) relational database
 * [mailtrap](https://mailtrap.io/) safe Email Testing for Staging & Development
-* [Heroku](https://www.heroku.com/what) cloud platform
+* [Heroku](https://www.heroku.com/what) cloud platform used to deploy app
 
 ## Setup
 
@@ -44,10 +44,25 @@ App to display a feedback form using Python Flask, PostgreSQL & mailtrap.io. Dep
 
 ## Code Examples
 
-* tba
+* code to submit completed form tto Postgres database
 
 ```python
-
+@app.route('/submit', methods=['POST'])
+def submit():
+  if request.method == 'POST':
+    customer = request.form['customer']
+    dealer = request.form['dealer']
+    rating = request.form['rating']
+    comments = request.form['comments']
+    if customer == '' or dealer == '':
+      return render_template('index.html', message='Please enter required fields')
+    if db.session.query(Feedback).filter(Feedback.customer == customer).count() == 0:
+      data = Feedback(customer, dealer, rating, comments)
+      db.session.add(data)
+      db.session.commit()
+      send_mail(customer, dealer, rating, comments)
+      return render_template('success.html')
+    return render_template('index.html', message='You have already submitted feedback')
 ```
 
 ## Features
@@ -58,9 +73,9 @@ App to display a feedback form using Python Flask, PostgreSQL & mailtrap.io. Dep
 
 ## Status & To-do list
 
-* Status: in dev
+* Status: Fully working in dev. Deployed to Heroku
 
-* To-do: complete tutorial
+* To-do: Use to create more advanced Python-PostgreSQL app
 
 ## Inspiration
 
