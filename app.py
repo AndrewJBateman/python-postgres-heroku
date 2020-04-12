@@ -2,19 +2,19 @@ from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from send_mail import send_mail
 
-import config
+# import config
 
 app = Flask(__name__)
 
-ENV = 'dev'
+ENV = 'prod'
 
 if ENV == 'dev':
   app.debug = True
-  app.config['SQLALCHEMY_DATABASE_URI'] = config.SQLALCHEMY_DATABASE_URI
+  app.config['SQLALCHEMY_DATABASE_URI'] = ''
 
 else:
   app.debug = False
-  app.config['SQLALCHEMY_DATABASE_URI'] = config.HERO_DB_URI
+  app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://yscoxfpvqrgppm:c946f58e9d54d57ff03c1e81845f39a8916c5b1dbc67f1af0e1645bb5a0241e7@ec2-54-152-175-141.compute-1.amazonaws.com:5432/d4cgf0320ee4kd"
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
