@@ -1,6 +1,12 @@
 # :zap: Python-Flask PostgreSQL Heroku
 
-App to display a feedback form using Python Flask, store the entered data in a PostgreSQL database then send an example email using mailtrap.io. Deployed to Heroku. Tutorial code from [Traversy Media, Youtube video: Build & Deploy A Python Web App | Flask, Postgres & Heroku](https://www.youtube.com/watch?v=w25ea_I89iM)
+* App to display a feedback form using Python Flask, store the entered data in a PostgreSQL database then send an example email using mailtrap.io. Deployed to Heroku. Tutorial code from [Traversy Media, Youtube video: Build & Deploy A Python Web App | Flask, Postgres & Heroku](https://www.youtube.com/watch?v=w25ea_I89iM)
+* **Note:** to open web links in a new window use: _ctrl+click on link_
+
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/pean-stack-api-display?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/pean-stack-api-display?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/pean-stack-api-display?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/pean-stack-api-display?style=plastic)
 
 ## :page_facing_up: Table of contents
 
@@ -84,6 +90,10 @@ def submit():
 * [Traversy Media, Youtube video: Build & Deploy A Python Web App | Flask, Postgres & Heroku](https://www.youtube.com/watch?v=w25ea_I89iM)
 * [How to Install python 3.8 on Windows 10](https://www.youtube.com/watch?v=bnhQBUEpWlg)
 
+## :file_folder: License
+
+* N/A
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
